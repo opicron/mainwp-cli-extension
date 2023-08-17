@@ -1,3 +1,4 @@
+<?php
 
 namespace MainWP\Dashboard;
 
@@ -103,3 +104,5 @@ class MainWP_WP_CLI_Custom_Command extends MainWP_WP_CLI_Command {
 }
 
 MainWP_WP_CLI_Custom_Command::init();
+
+?>
