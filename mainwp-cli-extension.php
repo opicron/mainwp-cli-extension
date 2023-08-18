@@ -1,5 +1,6 @@
 <?php
 
+
 namespace MainWP\Dashboard;
 
 // Exit if access directly.
@@ -130,16 +131,16 @@ class MainWP_WP_CLI_Custom_Command extends MainWP_WP_CLI_Command {
 				// ok!
 			}
 			if ( $success ) {
-				//MainWP_DB_Site_Actions::instance()->delete_action_by( 'wpid', $siteid );
+				MainWP_DB_Site_Actions::instance()->delete_action_by( 'wpid', $website->id );
 				//wp_die( wp_json_encode( array( 'success' => 'ok' ) ) );
 				//\WP_CLI::line( sprintf( '[%-' . $idLength . 's] %-' . $nameLength . 's - %-' . $urlLength . 's (%-' . $versionLength . 's) removed non-mainwp actions', $website->id, $website->name, $website->url, $website->version ) );
-				\WP_CLI::line( sprintf( '[%-' . $idLength . 's] %-' . $nameLength . 's :: removed non-mainwp actions', $website->id, $website->name ) );
+				\WP_CLI::line( sprintf( '[%-' . $idLength . 's] %-' . $nameLength . 's - removed non-mainwp actions', $website->id, $website->name ) );
 				continue;
 				
 			}
 			
 			if ( empty( $error ) ) {
-				\WP_CLI::line( sprintf( '%-' . $idLength . 's %-' . $nameLength . 's %-' . $urlLength . 's %-' . $versionLength . 's - undefined error, please try again', $website->id, $website->name, $website->url, $website->version ) );
+				\WP_CLI::line( sprintf( '%-' . $idLength . 's %-' . $nameLength . 's - undefined error, please try again', $website->id, $website->name ) );
 			}							
 		}
 		
